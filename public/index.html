@@ -14,6 +14,7 @@
         socket.on('connect', function() {
             console.log('Conectado al servidor');
         });
+        
         socket.on('disconnect', function() {
             console.log('Perdimos conexión con el servidor');
         });
@@ -22,10 +23,14 @@
             mensaje: 'Hola mundo'
         }, function(resp) {
             console.log('respuesta server: ', resp);
-        } );
-        socket.on('mensaje', function(payload) {
-            console.log('Mensaje recibido: ', payload);
-        } );
+        });
+        socket.on('nuevo-mensaje', function(payload) {
+            console.log('Escuchando: ', payload);
+        });
+        socket.on('active-bands', function(bands) {
+            console.clear();
+            console.table(bands);
+        });
     </script>
 </body>
 </html>
