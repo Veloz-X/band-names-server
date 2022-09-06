@@ -2,9 +2,9 @@ const {io} = require('../index');
 const Band = require('../models/band');
 const Bands = require('../models/bands');
 const bands = new Bands();
-bands.addBand(new Band('Banda#1'));
-bands.addBand(new Band('Banda#2'));
-bands.addBand(new Band('Banda#3'));
+bands.addBand(new Band('Lista A'));
+bands.addBand(new Band('Lista B'));
+bands.addBand(new Band('Lista C'));
 console.log(bands);
 console.log('INICIANDO SERVIDOR');
 //MENSAJES DE SOCKETS
