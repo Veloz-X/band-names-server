@@ -6,7 +6,6 @@ bands.addBand(new Band('Banda#1'));
 bands.addBand(new Band('Banda#2'));
 bands.addBand(new Band('Banda#3'));
 console.log(bands);
-
 console.log('INICIANDO SERVIDOR');
 //MENSAJES DE SOCKETS
 io.on('connection', (client) => {
