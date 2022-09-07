@@ -16,17 +16,16 @@ io.on('connection', (client) => {
     client.on('disconnect', () => {
         console.log('User disconnected');
     } );
-    client.on('mensaje', (payload) => {
-        console.log('-- MENSAJE !! ---',payload);
-        io.emit('mensaje', payload);
-    });
-    client.on('vote-band', (payload) => {
+    // client.on('mensaje', (payload) => {
+    //     console.log('-- MENSAJE !! ---',payload);
+    //     io.emit('mensaje', payload);
+    // });
+    client.on('vote-candidate', (payload) => {
         bands.voteBand(payload.id);
         io.emit('active-candidates', bands.getBands());
-        // console.log(payload);
     });
 
-    client.on('add-band', (payload) => {
+    client.on('add-candidate', (payload) => {
         const newBand = new Band(payload.name);
         bands.addBand(newBand);
         io.emit('active-candidates', bands.getBands());
