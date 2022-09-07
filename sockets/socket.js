@@ -11,29 +11,23 @@ console.log('INICIANDO SERVIDOR');
 io.on('connection', (client) => {
     console.log('New user connected');
 
-    client.emit('active-candidates', bands.getBands());
+    client.emit('active-candidates', bands.getCandidates());
 
     client.on('disconnect', () => {
         console.log('User disconnected');
     } );
-    // client.on('mensaje', (payload) => {
-    //     console.log('-- MENSAJE !! ---',payload);
-    //     io.emit('mensaje', payload);
-    // });
     client.on('vote-candidate', (payload) => {
-        bands.voteBand(payload.id);
-        io.emit('active-candidates', bands.getBands());
+        bands.voteCandidate(payload.id);
+        io.emit('active-candidates', bands.getCandidates());
     });
-
     client.on('add-candidate', (payload) => {
         const newBand = new Band(payload.name);
-        bands.addBand(newBand);
-        io.emit('active-candidates', bands.getBands());
+        bands.addCandidate(newBand);
+        io.emit('active-candidates', bands.getCandidates());
     });
-    
     client.on('delete-candidate', (payload) => {
-        bands.deleteBand(payload.id);
-        io.emit('active-candidates', bands.getBands());
+        bands.deleteCandidate(payload.id);
+        io.emit('active-candidates', bands.getCandidates());
     });
 
 });
