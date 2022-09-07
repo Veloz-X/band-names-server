@@ -32,7 +32,7 @@ io.on('connection', (client) => {
         io.emit('active-candidates', bands.getBands());
     });
     
-    client.on('delete-band', (payload) => {
+    client.on('delete-candidate', (payload) => {
         bands.deleteBand(payload.id);
         io.emit('active-candidates', bands.getBands());
     });
