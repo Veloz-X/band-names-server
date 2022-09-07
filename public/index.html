@@ -27,7 +27,7 @@
         socket.on('nuevo-mensaje', function(payload) {
             console.log('Escuchando: ', payload);
         });
-        socket.on('active-bands', function(bands) {
+        socket.on('active-candidates', function(bands) {
             console.clear();
             console.table(bands);
         });
