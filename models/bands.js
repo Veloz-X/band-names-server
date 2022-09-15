@@ -8,7 +8,7 @@ class Bands{
         this.bands.push(band);
     }
     
-    getBands(){
+    getCandidates(){
         return this.bands;
     }
 
