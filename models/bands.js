@@ -4,20 +4,20 @@ class Bands{
     constructor(){
         this.bands = [];
     }
-    addCandidate(band = new Band()){
+    addBand(band = new Band()){
         this.bands.push(band);
     }
     
-    getCandidates(){
+    getBands(){
         return this.bands;
     }
 
-    deleteCandidate(id = ''){
+    deleteBand(id = ''){
         this.bands = this.bands.filter(band => band.id !== id);
         return this.bands;
     }
 
-    voteCandidate(id = ''){
+    voteBand(id = ''){
         this.bands = this.bands.map(band => {
             if(band.id === id){
                 band.votes++;
