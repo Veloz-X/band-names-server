@@ -4,7 +4,7 @@ class Bands{
     constructor(){
         this.bands = [];
     }
-    addBand(band = new Band()){
+    addCandidate(band = new Band()){
         this.bands.push(band);
     }
     
@@ -17,7 +17,7 @@ class Bands{
         return this.bands;
     }
 
-    voteBand(id = ''){
+    voteCandidate(id = ''){
         this.bands = this.bands.map(band => {
             if(band.id === id){
                 band.votes++;
