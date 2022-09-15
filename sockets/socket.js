@@ -2,9 +2,9 @@ const {io} = require('../index');
 const Candidate = require('../models/candidate');
 const Candidates = require('../models/candidates');
 const candidates = new Candidates();
-candidates.addCandidate(new Candidate('Lista A'));
-candidates.addCandidate(new Candidate('Lista B'));
-candidates.addCandidate(new Candidate('Lista C'));
+candidates.addCandidate(new Candidate('Lista A - Juan Perez'));
+candidates.addCandidate(new Candidate('Lista B - Pedro Sanchez'));
+candidates.addCandidate(new Candidate('Lista C - Maria Lopez'));
 console.log(candidates);
 console.log('INICIANDO SERVIDOR');
 //MENSAJES DE SOCKETS
