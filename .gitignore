@@ -10,6 +10,7 @@
 .svn/
 .env
 node_modules/
+.history
 
 # IntelliJ related
 *.iml
